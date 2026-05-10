@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Soumya Ranjan Paikray · Global WFM & Operations Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#12151c;--bg3:#181c26;--bg4:#1e2330;
+  --gold:#f0a500;--gold2:#ffc947;--gold3:#ffdd80;
+  --teal:#00c896;--teal2:#00e6aa;
+  --purple:#7c5cbf;--blue:#3b82f6;
+  --red:#ef4444;--orange:#f97316;
+  --text:#e8ecf4;--text2:#9aa5b8;--text3:#5a6680;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --card:rgba(255,255,255,0.04);--card2:rgba(255,255,255,0.07);
+  --fi:Inter,sans-serif;--fm:'JetBrains Mono',monospace;
+  --r8:8px;--r12:12px;--r16:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fi);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#333;border-radius:2px}
+a{text-decoration:none;color:inherit}
+
+/* ═══ NAV ═══ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;height:64px;
+  background:rgba(13,15,20,0.8);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.n-logo{font-size:1.1rem;font-weight:800;color:var(--text);letter-spacing:-0.02em}
+.n-logo span{color:var(--gold)}
+.n-links{display:flex;align-items:center;gap:0}
+.n-links a{
+  font-size:0.8rem;font-weight:500;color:var(--text2);
+  padding:0.45rem 1rem;border-radius:6px;letter-spacing:0.04em;
+  text-transform:uppercase;position:relative;transition:color 0.2s;
+}
+.n-links a.active,.n-links a:hover{color:var(--text)}
+.n-links a.active::after{content:'';position:absolute;bottom:-1px;left:1rem;right:1rem;height:2px;background:var(--gold);border-radius:2px}
+.n-hire{
+  background:var(--gold);color:#000;
+  padding:0.45rem 1.2rem;border-radius:6px;
+  font-size:0.8rem;font-weight:700;letter-spacing:0.04em;
+  display:flex;align-items:center;gap:0.4rem;transition:all 0.2s;
+}
+.n-hire:hover{background:var(--gold2);transform:translateY(-1px)}
+.n-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
+.n-ham span{display:block;width:20px;height:2px;background:var(--text2);border-radius:2px;transition:all 0.3s}
+.n-mob{display:none;position:fixed;top:64px;left:0;right:0;z-index:290;background:rgba(13,15,20,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);flex-direction:column;padding:1rem 5%}
+.n-mob a{color:var(--text2);font-size:0.9rem;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;padding:0.7rem 0;display:block;border-bottom:1px solid var(--border);transition:color 0.2s}
+.n-mob a:hover{color:var(--gold)}
+@media(max-width:760px){.n-links{display:none}.n-hire{display:none}.n-ham{display:flex}}
+
+/* ═══ HERO ═══ */
+#hero{
+  min-height:100vh;padding:7rem 5% 4rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+  position:relative;overflow:hidden;
+}
+.hero-noise{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 30%,rgba(0,200,150,0.07) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 60% at 20% 80%,rgba(240,165,0,0.06) 0%,transparent 55%),
+    radial-gradient(ellipse 40% 40% at 50% 50%,rgba(124,92,191,0.04) 0%,transparent 60%);
+}
+.hero-grid-lines{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+  background-size:50px 50px;
+  mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 30%,transparent 100%);
+}
+#pcv{position:absolute;inset:0;pointer-events:none}
+.hero-left{position:relative;z-index:2}
+.avail-badge{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:rgba(0,200,150,0.08);border:1px solid rgba(0,200,150,0.2);
+  color:var(--teal);padding:0.3rem 0.8rem;border-radius:20px;
+  font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+.avail-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero-fname{font-size:clamp(3rem,7vw,6rem);font-weight:900;line-height:0.95;letter-spacing:-0.03em;color:var(--text);display:block;opacity:0;animation:fup 0.7s 0.2s ease forwards}
+.hero-lname{font-size:clamp(3rem,7vw,6rem);font-weight:900;line-height:0.95;letter-spacing:-0.03em;display:block;margin-bottom:1.2rem;
+  background:linear-gradient(120deg,var(--gold) 0%,var(--gold2) 40%,var(--gold3) 60%,var(--gold) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  background-size:200%;animation:fup 0.7s 0.35s ease forwards,shim 5s 1s linear infinite;opacity:0}
+@keyframes shim{0%{background-position:0%}100%{background-position:200%}}
+.hero-role{
+  font-size:1.05rem;font-weight:500;color:var(--text2);margin-bottom:1.2rem;
+  display:flex;align-items:center;gap:0.5rem;
+  opacity:0;animation:fup 0.7s 0.5s ease forwards;
+}
+.hero-role::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-desc{font-size:0.95rem;color:var(--text2);line-height:1.8;max-width:480px;margin-bottom:2rem;opacity:0;animation:fup 0.7s 0.65s ease forwards}
+.hero-desc strong{color:var(--text);font-weight:600}
+.hero-stats-row{display:flex;gap:1.5rem;margin-bottom:2rem;opacity:0;animation:fup 0.7s 0.8s ease forwards}
+.hs-item{}
+.hs-n{font-size:1.7rem;font-weight:800;color:var(--gold);line-height:1;letter-spacing:-0.02em}
+.hs-l{font-size:0.65rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.07em;margin-top:0.15rem}
+.hero-ctas{display:flex;gap:0.8rem;flex-wrap:wrap;opacity:0;animation:fup 0.7s 0.95s ease forwards}
+.btn-gold{background:var(--gold);color:#000;padding:0.75rem 1.6rem;border-radius:8px;font-weight:700;font-size:0.85rem;letter-spacing:0.03em;border:none;cursor:pointer;transition:all 0.25s;display:inline-flex;align-items:center;gap:0.4rem}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(240,165,0,0.3)}
+.btn-ghost{background:transparent;color:var(--text2);padding:0.75rem 1.6rem;border-radius:8px;font-weight:600;font-size:0.85rem;letter-spacing:0.03em;border:1px solid var(--border2);cursor:pointer;transition:all 0.25s;display:inline-flex;align-items:center;gap:0.4rem}
+.btn-ghost:hover{color:var(--text);border-color:rgba(255,255,255,0.25);transform:translateY(-2px)}
+
+/* terminal */
+.hero-right{position:relative;z-index:2;opacity:0;animation:fup 0.8s 0.5s ease forwards}
+.terminal{
+  background:#1a1d27;border:1px solid var(--border2);border-radius:14px;
+  overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5);
+}
+.term-bar{
+  background:#13151e;padding:0.75rem 1rem;
+  display:flex;align-items:center;gap:0.5rem;
+  border-bottom:1px solid var(--border);
+}
+.dot{width:12px;height:12px;border-radius:50%}
+.dot-r{background:#ff5f56}.dot-y{background:#ffbd2e}.dot-g{background:#27c93f}
+.term-title{flex:1;text-align:center;font-family:var(--fm);font-size:0.72rem;color:var(--text3)}
+.term-body{padding:1.5rem;font-family:var(--fm);font-size:0.82rem;line-height:1.8}
+.tc-prompt{color:var(--teal2)}
+.tc-cmd{color:var(--text)}
+.tc-brace{color:var(--text2)}
+.tc-key{color:var(--blue);font-style:normal}
+.tc-str{color:var(--teal)}
+.tc-num{color:var(--orange)}
+.tc-arr{color:var(--gold)}
+.tc-comment{color:var(--text3);font-style:italic}
+.cursor{display:inline-block;width:2px;height:1em;background:var(--teal2);vertical-align:middle;animation:cur 1s step-end infinite}
+@keyframes cur{0%,100%{opacity:1}50%{opacity:0}}
+
+/* floating badges */
+.hero-badge-float{
+  position:absolute;background:#1e2330;border:1px solid var(--border2);
+  border-radius:10px;padding:0.6rem 0.9rem;
+  display:flex;align-items:center;gap:0.5rem;
+  font-size:0.75rem;font-weight:600;color:var(--text);
+  box-shadow:0 8px 24px rgba(0,0,0,0.4);
+  animation:float1 4s ease-in-out infinite;
+}
+.hbf-pmp{top:-10px;right:-10px;animation-delay:0s}
+.hbf-amazon{bottom:20px;left:-20px;animation-delay:1.5s}
+.hero-badge-float .hbf-ic{font-size:1.1rem}
+@keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* ═══ SECTION BASE ═══ */
+section{padding:6rem 5%}
+.sec-label{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(240,165,0,0.08);border:1px solid rgba(240,165,0,0.2);color:var(--gold);font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.25rem 0.7rem;border-radius:20px;margin-bottom:1.2rem}
+.sec-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.02em;color:var(--text);margin-bottom:0.6rem}
+.sec-title .hl{color:var(--gold)}
+.sec-title .hl2{color:var(--teal)}
+.sec-sub{font-size:0.92rem;color:var(--text2);line-height:1.8;max-width:580px;margin-bottom:3rem}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
+.rvl{opacity:0;transform:translateX(-28px);transition:opacity 0.65s ease,transform 0.65s ease}
+.rvr{opacity:0;transform:translateX(28px);transition:opacity 0.65s ease,transform 0.65s ease}
+.rv.on,.rvl.on,.rvr.on{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.15s}.d3{transition-delay:.23s}
+.d4{transition-delay:.31s}.d5{transition-delay:.39s}.d6{transition-delay:.47s}
+@keyframes fup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* ═══ ABOUT ═══ */
+#about{background:var(--bg2)}
+.about-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:start}
+.about-text p{color:var(--text2);font-size:0.93rem;line-height:1.88;margin-bottom:1rem}
+.about-text p strong{color:var(--text);font-weight:600}
+.about-chips{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem}
+.chip{font-size:0.75rem;font-weight:600;color:var(--text2);background:var(--card2);border:1px solid var(--border);padding:0.3rem 0.75rem;border-radius:20px;letter-spacing:0.02em;transition:all 0.2s}
+.chip:hover{color:var(--gold);border-color:rgba(240,165,0,0.3)}
+.about-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.astat{background:var(--card);border:1px solid var(--border);border-radius:var(--r12);padding:1.4rem;transition:border-color 0.3s,transform 0.3s}
+.astat:hover{border-color:rgba(240,165,0,0.2);transform:translateY(-3px)}
+.astat-ic{font-size:1.5rem;margin-bottom:0.6rem}
+.astat-n{font-size:1.6rem;font-weight:800;color:var(--gold);letter-spacing:-0.02em;line-height:1}
+.astat-n.t{color:var(--teal)}
+.astat-lbl{font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.07em;margin-top:0.2rem}
+.astat-sub{font-size:0.75rem;color:var(--text3);margin-top:0.4rem;line-height:1.4}
+
+/* ═══ SKILLS ═══ */
+#skills{background:var(--bg)}
+.sk-filters{display:flex;gap:0.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.sk-btn{font-size:0.75rem;font-weight:600;color:var(--text2);background:transparent;border:1px solid var(--border);padding:0.35rem 0.9rem;border-radius:20px;cursor:pointer;transition:all 0.2s;letter-spacing:0.03em}
+.sk-btn.active{background:var(--gold);color:#000;border-color:var(--gold)}
+.sk-btn:hover:not(.active){border-color:var(--border2);color:var(--text)}
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:1rem}
+.sk-item{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--r12);
+  padding:1.2rem 0.8rem;text-align:center;cursor:default;
+  transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  position:relative;overflow:hidden;
+}
+.sk-item::before{
+  content:'';position:absolute;inset:0;border-radius:var(--r12);
+  background:linear-gradient(135deg,rgba(240,165,0,0.06),transparent);
+  opacity:0;transition:opacity 0.3s;
+}
+.sk-item:hover{transform:translateY(-6px) scale(1.04);border-color:rgba(240,165,0,0.25);box-shadow:0 16px 32px rgba(0,0,0,0.3)}
+.sk-item:hover::before{opacity:1}
+.sk-emoji{font-size:2rem;margin-bottom:0.5rem;display:block;transition:transform 0.3s}
+.sk-item:hover .sk-emoji{transform:scale(1.15) rotate(5deg)}
+.sk-name{font-size:0.72rem;font-weight:600;color:var(--text2);letter-spacing:0.02em}
+.sk-item[data-cat].hidden{display:none}
+
+/* ═══ METRICS ═══ */
+#metrics{background:var(--bg2)}
+.mt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.mt-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--r16);
+  padding:1.8rem 1.4rem;position:relative;overflow:hidden;
+  transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1),border-color 0.3s,box-shadow 0.3s;
+}
+.mt-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--teal),var(--gold));background-size:200%;animation:gradient-slide 3s linear infinite}
+@keyframes gradient-slide{0%{background-position:0%}100%{background-position:200%}}
+.mt-card:hover{transform:translateY(-6px);border-color:rgba(240,165,0,0.2);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+.mt-icon{font-size:1.3rem;margin-bottom:0.8rem}
+.mt-n{font-family:var(--fm);font-size:2.4rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:0.4rem;display:block}
+.mt-n.t{color:var(--teal)}
+.mt-desc{font-size:0.78rem;color:var(--text2);line-height:1.5}
+.mt-badge{display:inline-flex;align-items:center;gap:0.35rem;font-size:0.62rem;font-weight:700;color:var(--teal);background:rgba(0,200,150,0.08);border:1px solid rgba(0,200,150,0.18);padding:0.18rem 0.5rem;border-radius:4px;letter-spacing:0.06em;text-transform:uppercase;margin-top:0.7rem}
+
+/* ═══ EXPERIENCE ═══ */
+#experience{background:var(--bg)}
+.exp-layout{display:grid;grid-template-columns:220px 1fr;gap:0;border:1px solid var(--border);border-radius:var(--r16);overflow:hidden}
+.exp-tabs{background:var(--bg2);border-right:1px solid var(--border);padding:1rem 0}
+.exp-tab{
+  padding:0.9rem 1.3rem;cursor:pointer;font-size:0.82rem;font-weight:500;
+  color:var(--text3);border-left:2px solid transparent;
+  transition:all 0.2s;letter-spacing:0.02em;
+}
+.exp-tab:hover{color:var(--text2);background:rgba(255,255,255,0.03)}
+.exp-tab.active{color:var(--text);border-left-color:var(--gold);background:rgba(240,165,0,0.06)}
+.exp-tab .et-company{font-size:0.75rem;display:block}
+.exp-tab .et-years{font-size:0.65rem;color:var(--text3);margin-top:0.1rem;display:block}
+.exp-panels{padding:2rem 2.2rem}
+.exp-panel{display:none}
+.exp-panel.active{display:block}
+.ep-role{font-size:1.2rem;font-weight:700;color:var(--text);margin-bottom:0.3rem;letter-spacing:-0.01em}
+.ep-company{color:var(--gold);font-size:0.85rem;font-weight:600;margin-bottom:0.6rem}
+.ep-meta{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.ep-period{font-family:var(--fm);font-size:0.72rem;color:var(--text3);background:var(--card2);border:1px solid var(--border);padding:0.2rem 0.6rem;border-radius:5px}
+.ep-loc{font-size:0.75rem;color:var(--text3);display:flex;align-items:center;gap:0.3rem}
+.ep-desc{font-size:0.88rem;color:var(--text2);line-height:1.85;margin-bottom:1.2rem}
+.ep-wins{list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.4rem}
+.ep-wins li{font-size:0.84rem;color:var(--text2);padding-left:1.2rem;position:relative;line-height:1.75}
+.ep-wins li::before{content:'◆';color:var(--gold);position:absolute;left:0;top:0.2rem;font-size:0.45rem}
+.ep-wins li strong{color:var(--text);white-space:nowrap}
+.ep-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.ep-tag{font-size:0.72rem;font-weight:500;color:var(--text3);background:var(--card2);border:1px solid var(--border);padding:0.22rem 0.6rem;border-radius:5px}
+
+/* ═══ PROJECTS ═══ */
+#projects{background:var(--bg2)}
+.pr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem}
+.pr-card{
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--r16);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1),border-color 0.3s,box-shadow 0.35s;
+}
+.pr-card:hover{transform:translateY(-8px);border-color:var(--border2);box-shadow:0 24px 50px rgba(0,0,0,0.4)}
+.pr-header{
+  height:90px;position:relative;overflow:hidden;
+  display:flex;align-items:flex-start;padding:1rem;justify-content:space-between;
+}
+.pr-header.grad-purple{background:linear-gradient(135deg,#2d1b5e,#7c5cbf)}
+.pr-header.grad-teal{background:linear-gradient(135deg,#0a3a2d,#00c896)}
+.pr-header.grad-orange{background:linear-gradient(135deg,#3a1a0a,#f97316)}
+.pr-header.grad-blue{background:linear-gradient(135deg,#0a1a3a,#3b82f6)}
+.pr-header.grad-gold{background:linear-gradient(135deg,#3a2a0a,#f0a500)}
+.pr-header.grad-red{background:linear-gradient(135deg,#3a0a0a,#ef4444)}
+.pr-header::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,var(--bg3))}
+.pr-label-top{font-size:0.63rem;font-weight:700;color:rgba(255,255,255,0.85);background:rgba(0,0,0,0.25);padding:0.2rem 0.5rem;border-radius:4px;letter-spacing:0.07em;text-transform:uppercase;z-index:1;position:relative}
+.pr-result-badge{font-size:0.65rem;font-weight:700;color:var(--teal2);background:rgba(0,200,150,0.15);border:1px solid rgba(0,200,150,0.3);padding:0.2rem 0.55rem;border-radius:4px;z-index:1;position:relative;display:flex;align-items:center;gap:0.3rem}
+.pr-body{padding:1.3rem;flex:1;display:flex;flex-direction:column}
+.pr-icon-row{display:flex;align-items:center;gap:0.7rem;margin-bottom:0.9rem}
+.pr-icon{font-size:1.4rem}
+.pr-title{font-size:1rem;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:0.55rem;letter-spacing:-0.01em}
+.pr-desc{font-size:0.81rem;color:var(--text2);line-height:1.78;margin-bottom:auto;padding-bottom:1rem}
+.pr-tech-row{display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:0.9rem}
+.pr-tech{font-size:0.68rem;font-weight:500;color:var(--text3);background:var(--card);border:1px solid var(--border);padding:0.18rem 0.5rem;border-radius:4px}
+.pr-footer{border-top:1px solid var(--border);padding-top:0.9rem;display:flex;align-items:center;justify-content:space-between}
+.pr-outcome{font-family:var(--fm);font-size:0.72rem;color:var(--gold);display:flex;align-items:center;gap:0.4rem}
+.pr-outcome::before{content:'◆';font-size:0.45rem}
+.pr-details{font-size:0.72rem;font-weight:600;color:var(--gold);display:flex;align-items:center;gap:0.3rem;transition:gap 0.2s}
+.pr-card:hover .pr-details{gap:0.5rem}
+
+/* ═══ CONTACT ═══ */
+#contact{background:var(--bg)}
+.ct-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4.5rem;align-items:start}
+.ct-left h2{margin-bottom:1rem}
+.ct-left p{font-size:0.9rem;color:var(--text2);line-height:1.85;margin-bottom:1.8rem}
+.ct-det-row{display:flex;flex-direction:column;gap:0.8rem;margin-bottom:1.8rem}
+.ct-det{display:flex;align-items:center;gap:0.8rem}
+.ct-det-ic{width:36px;height:36px;border-radius:8px;background:var(--card2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0;transition:all 0.2s}
+.ct-det:hover .ct-det-ic{background:rgba(240,165,0,0.1);border-color:rgba(240,165,0,0.25);transform:scale(1.08)}
+.ct-det-txt{font-size:0.85rem;color:var(--text2)}
+.ct-det-txt a{color:var(--gold);transition:color 0.2s}
+.ct-det-txt a:hover{color:var(--gold2)}
+.ct-soc{display:flex;gap:0.6rem}
+.soc{width:36px;height:36px;border-radius:8px;background:var(--card2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all 0.25s}
+.soc:hover{background:rgba(240,165,0,0.1);border-color:rgba(240,165,0,0.25);transform:translateY(-3px)}
+.soc svg{width:14px;height:14px;fill:var(--text2)}
+.soc:hover svg{fill:var(--gold)}
+/* form */
+.cf{display:flex;flex-direction:column;gap:1rem}
+.fg{display:flex;flex-direction:column;gap:0.35rem}
+.fl{font-size:0.68rem;font-weight:600;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase}
+.fi,.ft{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:0.8rem 1rem;border-radius:8px;font-family:var(--fi);font-size:0.88rem;outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%}
+.fi:focus,.ft:focus{border-color:rgba(240,165,0,0.4);box-shadow:0 0 0 3px rgba(240,165,0,0.08)}
+.fi::placeholder,.ft::placeholder{color:var(--text3)}
+.ft{resize:vertical;min-height:120px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fsb{background:var(--gold);color:#000;padding:0.85rem 1.8rem;border:none;border-radius:8px;font-family:var(--fi);font-weight:700;font-size:0.85rem;letter-spacing:0.03em;cursor:pointer;transition:all 0.25s;align-self:flex-start;min-width:160px;position:relative;overflow:hidden}
+.fsb::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,0.15);transform:translateX(-100%);transition:transform 0.3s}
+.fsb:hover::after{transform:translateX(0)}
+.fsb:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 20px rgba(240,165,0,0.3)}
+.fsb:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+.fmsg{font-size:0.82rem;padding:0.75rem 1rem;border-radius:6px;display:none}
+.fmsg.ok{background:rgba(0,200,150,0.08);border:1px solid rgba(0,200,150,0.25);color:var(--teal2);display:block}
+.fmsg.er{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);color:#fca5a5;display:block}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.f-left .f-name{font-size:0.9rem;font-weight:700;color:var(--text)}
+.f-left .f-name span{color:var(--gold)}
+.f-copy{font-size:0.72rem;color:var(--text3);margin-top:0.2rem}
+.f-links{display:flex;gap:1.2rem}
+.f-links a{font-size:0.72rem;color:var(--text3);transition:color 0.2s}
+.f-links a:hover{color:var(--gold)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr;gap:2.5rem}
+  .hero-right{order:-1}
+  .terminal{max-width:500px;margin:0 auto}
+  .about-wrap{grid-template-columns:1fr;gap:2.5rem}
+  .ct-grid{grid-template-columns:1fr;gap:2.5rem}
+  .exp-layout{grid-template-columns:1fr;border:none;gap:1rem}
+  .exp-tabs{border-right:none;border-radius:var(--r12);border:1px solid var(--border);display:flex;overflow-x:auto;padding:0.5rem}
+  .exp-tab{border-left:none;border-bottom:2px solid transparent;white-space:nowrap;padding:0.6rem 1rem}
+  .exp-tab.active{border-bottom-color:var(--gold);border-left:none}
+  .exp-panels{border:1px solid var(--border);border-radius:var(--r12);padding:1.5rem}
+}
+@media(max-width:600px){.fr{grid-template-columns:1fr}section{padding:4.5rem 5%}.hero-stats-row{gap:1rem}.hs-n{font-size:1.4rem}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="n-logo">SRP<span>.</span></a>
+  <div class="n-links">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="n-hire">Hire Me →</a>
+  <button class="n-ham" id="ham"><span></span><span></span><span></span></button>
+</nav>
+<div class="n-mob" id="mob">
+  <a href="#hero" onclick="cm()">Home</a>
+  <a href="#about" onclick="cm()">About</a>
+  <a href="#skills" onclick="cm()">Skills</a>
+  <a href="#projects" onclick="cm()">Projects</a>
+  <a href="#experience" onclick="cm()">Experience</a>
+  <a href="#contact" onclick="cm()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-grid-lines"></div>
+  <canvas id="pcv"></canvas>
+
+  <div class="hero-left">
+    <div class="avail-badge"><span class="avail-dot"></span> Open to Opportunities</div>
+    <span class="hero-fname">Soumya Ranjan</span>
+    <span class="hero-lname">Paikray</span>
+    <div class="hero-role">Global WFM &amp; Operations Leader</div>
+    <p class="hero-desc">I build the systems that answer the hardest operational questions — <strong>how many people, where, and when.</strong> Leading global WFM portfolios across 27 sites, 8,000+ workforce, and 50M+ customer interactions annually.</p>
+    <div class="hero-stats-row">
+      <div class="hs-item"><div class="hs-n" data-target="17" data-suffix="+">0</div><div class="hs-l">Years Exp.</div></div>
+      <div class="hs-item"><div class="hs-n" data-target="50" data-suffix="M+">0</div><div class="hs-l">Interactions/yr</div></div>
+      <div class="hs-item"><div class="hs-n" data-target="8000" data-suffix="+">0</div><div class="hs-l">Workforce</div></div>
+      <div class="hs-item"><div class="hs-n" data-target="27">0</div><div class="hs-l">Global Sites</div></div>
+    </div>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-gold">Get In Touch →</a>
+      <a href="#experience" class="btn-ghost">View Journey ↓</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div style="position:relative">
+      <div class="hero-badge-float hbf-pmp">
+        <span class="hbf-ic">🏆</span>
+        <div><div style="font-size:0.75rem;font-weight:700">PMP® Certified</div><div style="font-size:0.65rem;color:var(--text3)">PMI · 17+ Years</div></div>
+      </div>
+      <div class="hero-badge-float hbf-amazon">
+        <span class="hbf-ic">⚡</span>
+        <div><div style="font-size:0.75rem;font-weight:700">$5M+ Saved</div><div style="font-size:0.65rem;color:var(--text3)">Annualized Impact</div></div>
+      </div>
+      <div class="terminal">
+        <div class="term-bar">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+          <div class="term-title">srp@portfolio ~ profile.json</div>
+        </div>
+        <div class="term-body">
+<span class="tc-prompt">›</span> <span class="tc-cmd">cat profile.json</span><br><br>
+<span class="tc-brace">{</span><br>
+&nbsp;&nbsp;<span class="tc-key">"name"</span><span class="tc-brace">: </span><span class="tc-str">"Soumya Ranjan Paikray"</span>,<br>
+&nbsp;&nbsp;<span class="tc-key">"title"</span><span class="tc-brace">: </span><span class="tc-str">"Manager III, Global WFM"</span>,<br>
+&nbsp;&nbsp;<span class="tc-key">"location"</span><span class="tc-brace">: </span><span class="tc-str">"Hyderabad, India"</span>,<br>
+&nbsp;&nbsp;<span class="tc-key">"experience_yrs"</span><span class="tc-brace">: </span><span class="tc-num">17</span>,<br>
+&nbsp;&nbsp;<span class="tc-key">"workforce_size"</span><span class="tc-brace">: </span><span class="tc-str">"8,000+"</span>,<br>
+&nbsp;&nbsp;<span class="tc-key">"cost_saved"</span><span class="tc-brace">: </span><span class="tc-str">"$5M+ annualized"</span>,<br>
+&nbsp;&nbsp;<span class="tc-key">"sla_maintained"</span><span class="tc-brace">: </span><span class="tc-num">91</span><span class="tc-brace">%,</span><br>
+&nbsp;&nbsp;<span class="tc-key">"tools"</span><span class="tc-brace">: [</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tc-arr">"SQL"</span>, <span class="tc-arr">"Python"</span>, <span class="tc-arr">"Power BI"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tc-arr">"Amazon Bedrock"</span>, <span class="tc-arr">"QuickSight"</span><br>
+&nbsp;&nbsp;<span class="tc-brace">],</span><br>
+&nbsp;&nbsp;<span class="tc-key">"certifications"</span><span class="tc-brace">: [</span><span class="tc-str">"PMP®"</span>, <span class="tc-str">"Agile"</span><span class="tc-brace">]</span><br>
+<span class="tc-brace">}</span><br><br>
+<span class="tc-prompt">›</span> <span class="cursor"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-wrap">
+    <div class="rvl">
+      <div class="sec-label">+ Who I Am</div>
+      <h2 class="sec-title">Bridging <span class="hl">Operations</span><br>&amp; <span class="hl2">AI Intelligence</span></h2>
+      <div class="about-text">
+        <p>Over <strong>17+ years</strong>, I've worked at the intersection of workforce strategy, customer experience, and operational transformation — leading global portfolios that support <strong>50M+ customer interactions</strong> annually across 27 sites with an 8,000+ workforce.</p>
+        <p>I'm passionate about turning complexity into structured execution. My philosophy: <strong>build with data, not just report on it.</strong> From simplifying a 53,000-line ML forecasting model to 10,000 lines (improving accuracy by 15%), to building AI-powered tools eliminating 125 hours of manual work per week — this is operational infrastructure, not experimentation.</p>
+        <p>During a demand surge of <strong>78% above forecast</strong>, I led capacity re-calibration and deployed 240K+ overtime hours globally while maintaining 91% SLA. Resilience isn't reactive — <strong>it's designed.</strong></p>
+      </div>
+      <div class="about-chips">
+        <span class="chip">Amazon · 14+ Years</span>
+        <span class="chip">B.Tech Computer Science</span>
+        <span class="chip">PMP® Certified</span>
+        <span class="chip">Agile / Jira</span>
+        <span class="chip">Hyderabad, India</span>
+        <span class="chip">Open to Global Roles</span>
+      </div>
+    </div>
+    <div class="about-stat-grid rvr">
+      <div class="astat rv d1">
+        <div class="astat-ic">🎓</div>
+        <div class="astat-n">B.Tech</div>
+        <div class="astat-lbl">Education</div>
+        <div class="astat-sub">Computer Science · GIET Gunupur</div>
+      </div>
+      <div class="astat rv d2">
+        <div class="astat-ic">🏆</div>
+        <div class="astat-n">PMP®</div>
+        <div class="astat-lbl">Certified</div>
+        <div class="astat-sub">PMI + Agile Jira Cloud L1 &amp; L2</div>
+      </div>
+      <div class="astat rv d3">
+        <div class="astat-ic">👥</div>
+        <div class="astat-n t">50+</div>
+        <div class="astat-lbl">Team Led</div>
+        <div class="astat-sub">Global WFM leadership org · 27 sites</div>
+      </div>
+      <div class="astat rv d4">
+        <div class="astat-ic">🤝</div>
+        <div class="astat-n t">90%+</div>
+        <div class="astat-lbl">Engagement</div>
+        <div class="astat-sub">Team score · 15% mobility gain</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-label">+ Expertise</div>
+  <h2 class="sec-title rv">Tools &amp; <span class="hl">Technologies</span></h2>
+  <div class="sk-filters rv">
+    <button class="sk-btn active" data-filter="all">ALL</button>
+    <button class="sk-btn" data-filter="wfm">WFM &amp; Ops</button>
+    <button class="sk-btn" data-filter="data">Data &amp; Analytics</button>
+    <button class="sk-btn" data-filter="ai">AI &amp; Automation</button>
+    <button class="sk-btn" data-filter="mgmt">Leadership</button>
+  </div>
+  <div class="sk-grid" id="skGrid">
+    <div class="sk-item rv d1" data-cat="wfm"><span class="sk-emoji">📊</span><div class="sk-name">Forecasting</div></div>
+    <div class="sk-item rv d2" data-cat="wfm"><span class="sk-emoji">📅</span><div class="sk-name">Capacity Planning</div></div>
+    <div class="sk-item rv d3" data-cat="wfm"><span class="sk-emoji">⚙️</span><div class="sk-name">Scheduling Opt.</div></div>
+    <div class="sk-item rv d4" data-cat="wfm"><span class="sk-emoji">📈</span><div class="sk-name">SLA Governance</div></div>
+    <div class="sk-item rv d5" data-cat="wfm"><span class="sk-emoji">🔁</span><div class="sk-name">Intraday Mgmt</div></div>
+    <div class="sk-item rv d6" data-cat="wfm"><span class="sk-emoji">🎯</span><div class="sk-name">Staffing Models</div></div>
+    <div class="sk-item rv d1" data-cat="data"><span class="sk-emoji">🗄️</span><div class="sk-name">SQL</div></div>
+    <div class="sk-item rv d2" data-cat="data"><span class="sk-emoji">🐍</span><div class="sk-name">Python</div></div>
+    <div class="sk-item rv d3" data-cat="data"><span class="sk-emoji">📉</span><div class="sk-name">Power BI</div></div>
+    <div class="sk-item rv d4" data-cat="data"><span class="sk-emoji">☁️</span><div class="sk-name">Amazon QuickSight</div></div>
+    <div class="sk-item rv d5" data-cat="data"><span class="sk-emoji">🤖</span><div class="sk-name">ML Forecasting</div></div>
+    <div class="sk-item rv d6" data-cat="data"><span class="sk-emoji">🖥️</span><div class="sk-name">Dashboard Auto.</div></div>
+    <div class="sk-item rv d1" data-cat="ai"><span class="sk-emoji">🧠</span><div class="sk-name">Amazon Bedrock</div></div>
+    <div class="sk-item rv d2" data-cat="ai"><span class="sk-emoji">⚡</span><div class="sk-name">AI-Powered Tools</div></div>
+    <div class="sk-item rv d3" data-cat="ai"><span class="sk-emoji">🔀</span><div class="sk-name">Predictive Routing</div></div>
+    <div class="sk-item rv d4" data-cat="ai"><span class="sk-emoji">🛠️</span><div class="sk-name">Automation Design</div></div>
+    <div class="sk-item rv d5" data-cat="ai"><span class="sk-emoji">🚀</span><div class="sk-name">AI-Aug. Ops</div></div>
+    <div class="sk-item rv d1" data-cat="mgmt"><span class="sk-emoji">🌐</span><div class="sk-name">Global Program Mgmt</div></div>
+    <div class="sk-item rv d2" data-cat="mgmt"><span class="sk-emoji">🛡️</span><div class="sk-name">Risk Governance</div></div>
+    <div class="sk-item rv d3" data-cat="mgmt"><span class="sk-emoji">💰</span><div class="sk-name">Cost Optimization</div></div>
+    <div class="sk-item rv d4" data-cat="mgmt"><span class="sk-emoji">👥</span><div class="sk-name">Team Dev (50+)</div></div>
+    <div class="sk-item rv d5" data-cat="mgmt"><span class="sk-emoji">📋</span><div class="sk-name">PMP® / Agile</div></div>
+    <div class="sk-item rv d6" data-cat="mgmt"><span class="sk-emoji">🔬</span><div class="sk-name">Lean / VSM</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- METRICS -->
+<section id="metrics">
+  <div class="sec-label">+ Quantified Impact</div>
+  <h2 class="sec-title rv">Numbers That <span class="hl">Tell the Story</span></h2>
+  <p class="sec-sub rv">Every metric below represents a real operational outcome — not a projection.</p>
+  <div class="mt-grid">
+    <div class="mt-card rv d1"><div class="mt-icon">💰</div><span class="mt-n" data-target="5" data-prefix="$" data-suffix="M+">$0</span><div class="mt-desc">Annualized cost savings via predictive routing &amp; workforce optimization</div><div class="mt-badge">↑ Cost Impact</div></div>
+    <div class="mt-card rv d2"><div class="mt-icon">🎯</div><span class="mt-n t" data-target="15" data-suffix="%">0%</span><div class="mt-desc">Improvement in forecast accuracy after ML model transformation</div><div class="mt-badge">↑ Forecasting</div></div>
+    <div class="mt-card rv d3"><div class="mt-icon">🛡️</div><span class="mt-n" data-target="71" data-suffix="%">0%</span><div class="mt-desc">Reduction in forecast risk exposure after model simplification</div><div class="mt-badge">↓ Risk</div></div>
+    <div class="mt-card rv d4"><div class="mt-icon">⚡</div><span class="mt-n t" data-target="125">0</span><div class="mt-desc">Manual hours eliminated per week via AI-powered WFM tooling</div><div class="mt-badge">↑ Automation</div></div>
+    <div class="mt-card rv d1"><div class="mt-icon">📊</div><span class="mt-n" data-target="91" data-suffix="%">0%</span><div class="mt-desc">SLA maintained during 78% demand surge · 240K+ overtime hours deployed</div><div class="mt-badge">↑ Resilience</div></div>
+    <div class="mt-card rv d2"><div class="mt-icon">🚀</div><span class="mt-n t" data-target="600">0</span><div class="mt-desc">Basis points improvement in Service Level via escalation framework</div><div class="mt-badge">↑ SLA bps</div></div>
+    <div class="mt-card rv d3"><div class="mt-icon">🔧</div><span class="mt-n" data-target="2300">0</span><div class="mt-desc">Basis points improvement in scheduling efficiency across portfolio</div><div class="mt-badge">↑ Scheduling</div></div>
+    <div class="mt-card rv d4"><div class="mt-icon">📉</div><span class="mt-n t" data-target="35" data-suffix="%">0%</span><div class="mt-desc">Reduction in team workload via WFM dashboard automation</div><div class="mt-badge">↓ Manual Work</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-label">+ Career</div>
+  <h2 class="sec-title rv">Professional <span class="hl">Journey</span></h2>
+  <p class="sec-sub rv">17 years of progressive leadership across global operations, workforce strategy, and AI-augmented decision-making.</p>
+  <div class="exp-layout rv">
+    <div class="exp-tabs">
+      <div class="exp-tab active" data-panel="p0"><span class="et-company">Amazon</span><span class="et-years">Oct 2022 – Present</span></div>
+      <div class="exp-tab" data-panel="p1"><span class="et-company">Amazon</span><span class="et-years">Oct 2017 – Oct 2022</span></div>
+      <div class="exp-tab" data-panel="p2"><span class="et-company">Early Career</span><span class="et-years">2008 – 2017</span></div>
+    </div>
+    <div class="exp-panels">
+      <div class="exp-panel active" id="p0">
+        <div class="ep-role">Manager III — Program Management, Global WFM</div>
+        <div class="ep-company">Amazon</div>
+        <div class="ep-meta">
+          <span class="ep-period">Oct 2022 – Present</span>
+          <span class="ep-loc">📍 Hyderabad, India</span>
+        </div>
+        <p class="ep-desc">Directing a 50+ member global WFM leadership organization across 27 sites, supporting an 8,000+ workforce and 50M+ annual customer interactions. Responsible for SLA governance above 90%, cost discipline, risk governance, and the strategic integration of AI into planning and forecasting operations.</p>
+        <ul class="ep-wins">
+          <li>Delivered <strong>$5M+</strong> in annualized savings through predictive routing redesign and workforce optimization</li>
+          <li>Simplified ML forecasting model from 53,000 → <strong>10,000 lines</strong>, improving accuracy by <strong>15%</strong> and cutting risk by <strong>71%</strong></li>
+          <li>Built AI-powered tools using <strong>Amazon Bedrock, QuickSight &amp; SQL automation</strong>, eliminating <strong>125 manual hours/week</strong></li>
+          <li>Deployed <strong>240K+ overtime hours</strong> globally during a 78% demand surge, maintaining <strong>91% SLA</strong></li>
+          <li>Lifted Service Levels by <strong>600 bps</strong> via a cross-functional escalation framework built from scratch</li>
+          <li>Improved scheduling efficiency by <strong>2,300 bps</strong> and reduced team workload by <strong>35%</strong> through automation</li>
+          <li>Increased internal mobility by <strong>15%</strong> with targeted talent development programs; <strong>90%+</strong> team engagement</li>
+        </ul>
+        <div class="ep-tags"><span class="ep-tag">SQL</span><span class="ep-tag">Python</span><span class="ep-tag">Amazon Bedrock</span><span class="ep-tag">QuickSight</span><span class="ep-tag">Power BI</span><span class="ep-tag">WFM Strategy</span><span class="ep-tag">AI Automation</span><span class="ep-tag">SLA Governance</span></div>
+      </div>
+      <div class="exp-panel" id="p1">
+        <div class="ep-role">Manager II — Program Management</div>
+        <div class="ep-company">Amazon</div>
+        <div class="ep-meta">
+          <span class="ep-period">Oct 2017 – Oct 2022</span>
+          <span class="ep-loc">📍 Hyderabad, India</span>
+        </div>
+        <p class="ep-desc">Managed day-to-day workforce operations, driving forecasting accuracy, scheduling adherence, and site-level performance. Independently initiated a reopen rate analysis program that became a global initiative.</p>
+        <ul class="ep-wins">
+          <li>Independently initiated a <strong>reopen rate analysis program</strong> that improved site reopen rate by <strong>400 bps</strong></li>
+          <li>Scaled the reopen rate program into a <strong>global initiative with 40+ worldwide headcount</strong></li>
+          <li>Built foundational analytics capabilities that informed <strong>regional forecasting models</strong></li>
+          <li>Demonstrated the core principle: <strong>find the signal, build the system, scale what works</strong></li>
+        </ul>
+        <div class="ep-tags"><span class="ep-tag">Workforce Analytics</span><span class="ep-tag">Forecasting</span><span class="ep-tag">SLA Management</span><span class="ep-tag">Root Cause Analysis</span><span class="ep-tag">Program Management</span></div>
+      </div>
+      <div class="exp-panel" id="p2">
+        <div class="ep-role">Operations, Business Analysis &amp; Program Management</div>
+        <div class="ep-company">Amazon · Apple Support (Minacs) · Honeywell</div>
+        <div class="ep-meta">
+          <span class="ep-period">2008 – 2017</span>
+          <span class="ep-loc">📍 India</span>
+        </div>
+        <p class="ep-desc">Progressed through Operations, Business Analyst, and Program Manager roles across technology, customer operations, and technical account management — applying Lean principles and Value Stream Mapping to eliminate process waste and improve throughput.</p>
+        <ul class="ep-wins">
+          <li>Built foundational expertise in <strong>workforce analytics, SLA governance, root cause analysis</strong>, and cross-functional program delivery</li>
+          <li>Independently initiated a <strong>reopen rate analysis program</strong> — improved site reopen rate by <strong>400 bps</strong>, then scaled it into a <strong>worldwide program with 40+ headcount</strong></li>
+          <li>Applied <strong>Lean principles &amp; Value Stream Mapping</strong> to eliminate process waste and improve throughput</li>
+          <li>Early evidence of <strong>data-driven thinking applied to operational problems at scale</strong></li>
+        </ul>
+        <div class="ep-tags"><span class="ep-tag">Lean / VSM</span><span class="ep-tag">Business Analysis</span><span class="ep-tag">Operations</span><span class="ep-tag">Program Management</span><span class="ep-tag">Process Improvement</span><span class="ep-tag">Root Cause Analysis</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-label">+ Key Initiatives</div>
+  <h2 class="sec-title rv">Signature <span class="hl">Programs Built</span></h2>
+  <p class="sec-sub rv">From AI infrastructure to global governance frameworks — initiatives with measurable, lasting impact.</p>
+  <div class="pr-grid">
+
+    <div class="pr-card rv d1">
+      <div class="pr-header grad-purple">
+        <span class="pr-label-top">AI &amp; ML</span>
+        <span class="pr-result-badge">↑ 15% Accuracy</span>
+      </div>
+      <div class="pr-body">
+        <div class="pr-icon-row"><div class="pr-icon">🤖</div></div>
+        <div class="pr-title">ML Forecasting Model Transformation</div>
+        <p class="pr-desc">Redesigned a 53,000-line ML-based forecasting model into a clean, 10,000-line architecture. Improved interpretability, reduced operational risk, and unlocked 15% improvement in forecast accuracy across the global portfolio.</p>
+        <div class="pr-tech-row"><span class="pr-tech">Python</span><span class="pr-tech">ML Models</span><span class="pr-tech">SQL</span><span class="pr-tech">QuickSight</span></div>
+        <div class="pr-footer">
+          <div class="pr-outcome">+15% accuracy · 71% risk reduction</div>
+          <div class="pr-details">Details →</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-card rv d2">
+      <div class="pr-header grad-teal">
+        <span class="pr-label-top">Cost Optimization</span>
+        <span class="pr-result-badge">$5M+ Saved</span>
+      </div>
+      <div class="pr-body">
+        <div class="pr-icon-row"><div class="pr-icon">💰</div></div>
+        <div class="pr-title">Predictive Routing Redesign</div>
+        <p class="pr-desc">Led end-to-end redesign of routing logic using predictive modelling to align demand signals with agent capacity. Delivered $5M+ in annualized cost savings while improving customer experience and SLA compliance.</p>
+        <div class="pr-tech-row"><span class="pr-tech">Predictive Modelling</span><span class="pr-tech">SQL</span><span class="pr-tech">WFM Tools</span></div>
+        <div class="pr-footer">
+          <div class="pr-outcome">$5M+ annualized · SLA maintained</div>
+          <div class="pr-details">Details →</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-card rv d3">
+      <div class="pr-header grad-orange">
+        <span class="pr-label-top">AI Automation</span>
+        <span class="pr-result-badge">125 hrs/wk saved</span>
+      </div>
+      <div class="pr-body">
+        <div class="pr-icon-row"><div class="pr-icon">⚡</div></div>
+        <div class="pr-title">AI-Powered WFM Tooling (Bedrock)</div>
+        <p class="pr-desc">Built AI-powered operational tools using Amazon Bedrock, QuickSight, and SQL automation to streamline reporting and intraday decision-making. Eliminated 125 hours of manual work per week.</p>
+        <div class="pr-tech-row"><span class="pr-tech">Amazon Bedrock</span><span class="pr-tech">QuickSight</span><span class="pr-tech">SQL</span><span class="pr-tech">Python</span></div>
+        <div class="pr-footer">
+          <div class="pr-outcome">125 manual hours/week eliminated</div>
+          <div class="pr-details">Details →</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-card rv d4">
+      <div class="pr-header grad-blue">
+        <span class="pr-label-top">Resilience</span>
+        <span class="pr-result-badge">91% SLA</span>
+      </div>
+      <div class="pr-body">
+        <div class="pr-icon-row"><div class="pr-icon">🛡️</div></div>
+        <div class="pr-title">Surge Capacity Response Framework</div>
+        <p class="pr-desc">Designed and executed a capacity re-calibration response during a 78% demand surge. Coordinated deployment of 240K+ overtime hours globally, maintaining 91% SLA while protecting financial guardrails.</p>
+        <div class="pr-tech-row"><span class="pr-tech">Capacity Planning</span><span class="pr-tech">WFM Strategy</span><span class="pr-tech">Risk Governance</span></div>
+        <div class="pr-footer">
+          <div class="pr-outcome">91% SLA · 240K+ hrs globally</div>
+          <div class="pr-details">Details →</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-card rv d5">
+      <div class="pr-header grad-gold">
+        <span class="pr-label-top">Governance</span>
+        <span class="pr-result-badge">+600 bps SLA</span>
+      </div>
+      <div class="pr-body">
+        <div class="pr-icon-row"><div class="pr-icon">📋</div></div>
+        <div class="pr-title">Cross-Functional Escalation Framework</div>
+        <p class="pr-desc">Built a structured escalation framework from scratch across multiple business units, establishing clear ownership, decision rights, and SLA response protocols. Delivered 600 bps SLA improvement.</p>
+        <div class="pr-tech-row"><span class="pr-tech">Process Design</span><span class="pr-tech">SLA Governance</span><span class="pr-tech">KPI Frameworks</span></div>
+        <div class="pr-footer">
+          <div class="pr-outcome">+600 bps service level improvement</div>
+          <div class="pr-details">Details →</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-card rv d6">
+      <div class="pr-header grad-red">
+        <span class="pr-label-top">Global Scale</span>
+        <span class="pr-result-badge">40+ Headcount</span>
+      </div>
+      <div class="pr-body">
+        <div class="pr-icon-row"><div class="pr-icon">🌐</div></div>
+        <div class="pr-title">Reopen Rate Global Program</div>
+        <p class="pr-desc">Self-initiated an analytics program to identify patterns in ticket reopens. Proved the model at site level (+400 bps), then scaled it into a global program with 40+ dedicated worldwide headcount.</p>
+        <div class="pr-tech-row"><span class="pr-tech">Data Analytics</span><span class="pr-tech">Root Cause Analysis</span><span class="pr-tech">Program Management</span></div>
+        <div class="pr-footer">
+          <div class="pr-outcome">+400 bps · 40+ global headcount</div>
+          <div class="pr-details">Details →</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="ct-grid">
+    <div class="rvl">
+      <div class="sec-label">+ Let's Talk</div>
+      <h2 class="sec-title ct-left">Let's <span class="hl">Connect</span></h2>
+      <p class="ct-left">I'm open to senior WFM, Operations, Service Delivery, and Program Management leadership roles. If you're building or transforming complex global operations — let's talk.</p>
+      <div class="ct-det-row">
+        <div class="ct-det"><div class="ct-det-ic">✉</div><div class="ct-det-txt"><a href="mailto:soumya.paikray@gmail.com">soumya.paikray@gmail.com</a></div></div>
+        <div class="ct-det"><div class="ct-det-ic">🔗</div><div class="ct-det-txt"><a href="https://www.linkedin.com/in/soumya-ranjan-paikray/" target="_blank">linkedin.com/in/soumya-ranjan-paikray</a></div></div>
+        <div class="ct-det"><div class="ct-det-ic">📍</div><div class="ct-det-txt">Hyderabad, Telangana, India</div></div>
+      </div>
+      <div class="ct-soc">
+        <a href="https://www.linkedin.com/in/soumya-ranjan-paikray/" target="_blank" class="soc"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="mailto:soumya.paikray@gmail.com" class="soc"><svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
+      </div>
+    </div>
+    <div class="rvr">
+      <form class="cf" id="cf">
+        <div class="fr">
+          <div class="fg"><label class="fl" for="nm">Full Name</label><input class="fi" type="text" id="nm" name="name" placeholder="Jane Smith" required/></div>
+          <div class="fg"><label class="fl" for="em">Email Address</label><input class="fi" type="email" id="em" name="email" placeholder="jane@company.com" required/></div>
+        </div>
+        <div class="fg"><label class="fl" for="co">Company</label><input class="fi" type="text" id="co" name="company" placeholder="Acme Corp"/></div>
+        <div class="fg"><label class="fl" for="su">Subject</label><input class="fi" type="text" id="su" name="subject" placeholder="Leadership opportunity" required/></div>
+        <div class="fg"><label class="fl" for="ms">Message</label><textarea class="ft" id="ms" name="message" placeholder="Tell me about the role or opportunity..." required></textarea></div>
+        <div id="fmsg" class="fmsg"></div>
+        <button type="submit" class="fsb" id="fsb">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-left">
+    <div class="f-name">SRP<span>.</span> — Soumya Ranjan Paikray, PMP®</div>
+    <div class="f-copy">Global WFM &amp; Operations Leader · Hyderabad, India · © 2025</div>
+  </div>
+  <div class="f-links">
+    <a href="mailto:soumya.paikray@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/soumya-ranjan-paikray/" target="_blank">LinkedIn</a>
+    <a href="#hero">Back to Top ↑</a>
+  </div>
+</footer>
+
+<script>
+/* NAV */
+const nav=document.getElementById('nav'),ham=document.getElementById('ham'),mob=document.getElementById('mob');
+let mo=false;
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
+ham.addEventListener('click',()=>{mo=!mo;mob.style.display=mo?'flex':'none';const s=ham.querySelectorAll('span');s[0].style.transform=mo?'rotate(45deg) translate(5px,5px)':'';s[1].style.opacity=mo?'0':'1';s[2].style.transform=mo?'rotate(-45deg) translate(5px,-5px)':''});
+function cm(){mo=false;mob.style.display='none';ham.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity='1'})}
+const secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.n-links a');
+window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(scrollY>=s.offsetTop-100)c=s.id});nls.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c))},{passive:true});
+
+/* PARTICLES */
+const cv=document.getElementById('pcv'),cx=cv.getContext('2d');
+let W,H,pts;
+function rsz(){W=cv.width=innerWidth;H=cv.height=innerHeight}rsz();
+window.addEventListener('resize',rsz,{passive:true});
+function mp(){return{x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+0.3,dx:(Math.random()-.5)*.25,dy:(Math.random()-.5)*.25,o:Math.random()*.4+0.08,g:Math.random()>.55}}
+pts=Array.from({length:100},mp);
+(function draw(){cx.clearRect(0,0,W,H);pts.forEach(p=>{cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=p.g?`rgba(240,165,0,${p.o})`:`rgba(0,200,150,${p.o})`;cx.fill();p.x+=p.dx;p.y+=p.dy;if(p.x<0||p.x>W)p.dx*=-1;if(p.y<0||p.y>H)p.dy*=-1});requestAnimationFrame(draw)})();
+
+/* SKILL FILTER */
+document.querySelectorAll('.sk-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.sk-btn').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+    const f=this.dataset.filter;
+    document.querySelectorAll('.sk-item').forEach(it=>{
+      it.classList.toggle('hidden',f!=='all'&&it.dataset.cat!==f);
+    });
+  });
+});
+
+/* EXP TABS */
+document.querySelectorAll('.exp-tab').forEach(tab=>{
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.exp-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.exp-panel').forEach(p=>p.classList.remove('active'));
+    this.classList.add('active');
+    document.getElementById(this.dataset.panel).classList.add('active');
+  });
+});
+
+/* REVEAL */
+const rEls=document.querySelectorAll('.rv,.rvl,.rvr');
+new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:0.1}).observe=function(){};
+const rObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:0.1});
+rEls.forEach(el=>rObs.observe(el));
+
+/* COUNTERS */
+function animC(el){
+  const t=parseInt(el.dataset.target),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'',dur=1800,t0=performance.now();
+  (function s(now){const p=Math.min((now-t0)/dur,1),e=1-Math.pow(1-p,3),v=Math.round(e*t);
+  el.textContent=pre+(v>=1000?v.toLocaleString():v)+suf;p<1?requestAnimationFrame(s):el.textContent=pre+(t>=1000?t.toLocaleString():t)+suf})(performance.now());
+}
+const cO=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.done){e.target.dataset.done='1';animC(e.target)}})},{threshold:0.5});
+document.querySelectorAll('[data-target]').forEach(c=>cO.observe(c));
+
+/* ── CONTACT FORM ── */
+(function(){
+  // !! REPLACE with your deployed Google Apps Script URL !!
+  const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycby58-tHzzdqBm9fRrOdGDOW1WeYhvUjr-y98uSjn-nbHYnOPxA37h-3U9yZ_ZZlGP_1/exec';
+
+  const form   = document.getElementById('cf');
+  const btn    = document.getElementById('fsb');
+  const msgBox = document.getElementById('fmsg');
+
+  // ── Simple client-side validation ──
+  function validate(data) {
+    if (!data.name.trim())    return 'Please enter your name.';
+    if (!data.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
+                              return 'Please enter a valid email address.';
+    if (!data.subject.trim()) return 'Please enter a subject.';
+    if (!data.message.trim()) return 'Please enter a message.';
+    return null;
+  }
+
+  // ── Show status message ──
+  function showMsg(type, text) {
+    msgBox.className = 'fmsg ' + type;
+    msgBox.textContent = text;
+    msgBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // ── Send with retry (1 retry on network failure) ──
+  async function sendWithRetry(payload, retries = 1) {
+    for (let attempt = 0; attempt <= retries; attempt++) {
+      try {
+        // mode:'no-cors' is required for Google Apps Script — response will be opaque
+        // but a thrown error still means a genuine network failure
+        await fetch(WEBHOOK_URL, {
+          method:  'POST',
+          mode:    'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify(payload)
+        });
+        return true; // fetch completed (opaque success)
+      } catch (err) {
+        if (attempt === retries) throw err; // final attempt failed
+        await new Promise(r => setTimeout(r, 1200)); // wait before retry
+      }
+    }
+  }
+
+  // ── Submit handler ──
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    msgBox.className = 'fmsg';
+    msgBox.textContent = '';
+
+    // Collect field values
+    const payload = {
+      name:      form.querySelector('#nm').value.trim(),
+      email:     form.querySelector('#em').value.trim(),
+      company:   form.querySelector('#co').value.trim(),
+      subject:   form.querySelector('#su').value.trim(),
+      message:   form.querySelector('#ms').value.trim(),
+      timestamp: new Date().toISOString(),
+      source:    window.location.href
+    };
+
+    // Validate before sending
+    const validationError = validate(payload);
+    if (validationError) { showMsg('er', '⚠ ' + validationError); return; }
+
+    // Loading state
+    btn.disabled = true;
+    btn.innerHTML = '<span style="display:inline-flex;align-items:center;gap:0.5rem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:spin 0.8s linear infinite"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Sending…</span>';
+
+    try {
+      await sendWithRetry(payload);
+      // ── Success ──
+      showMsg('ok', '✓ Message sent! I\'ll get back to you within 24 hours.');
+      form.reset();
+      // Auto-clear success after 8s
+      setTimeout(() => { if (msgBox.classList.contains('ok')) { msgBox.className = 'fmsg'; msgBox.textContent = ''; } }, 8000);
+    } catch (err) {
+      // ── Failure after retry ──
+      showMsg('er', '✗ Network error. Please email soumya.paikray@gmail.com directly.');
+      console.error('[Contact Form] Submission failed:', err);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send Message →';
+    }
+  });
+
+  // ── Add spinner keyframe dynamically ──
+  const style = document.createElement('style');
+  style.textContent = '@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}';
+  document.head.appendChild(style);
+})();
+</script>
+</body>
+</html>
