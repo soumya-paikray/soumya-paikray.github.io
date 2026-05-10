@@ -65,6 +65,13 @@ nav{
   display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
   position:relative;overflow:hidden;
 }
+
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr;gap:2rem}
+  .hero-right{order:1}
+  .terminal{max-width:500px;margin:0 auto}
+  .hero-photo-ring{width:90px;height:90px}
+}
 .hero-noise{
   position:absolute;inset:0;
   background:
@@ -363,8 +370,9 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 5%;
     <a href="#hero">Home</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
+    <a href="#metrics">Impact</a>
     <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
   <a href="#contact" class="n-hire">Hire Me →</a>
@@ -374,8 +382,9 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 5%;
   <a href="#hero" onclick="cm()">Home</a>
   <a href="#about" onclick="cm()">About</a>
   <a href="#skills" onclick="cm()">Skills</a>
-  <a href="#projects" onclick="cm()">Projects</a>
+  <a href="#metrics" onclick="cm()">Impact</a>
   <a href="#experience" onclick="cm()">Experience</a>
+  <a href="#projects" onclick="cm()">Projects</a>
   <a href="#contact" onclick="cm()">Contact</a>
 </div>
 
@@ -402,7 +411,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 5%;
       <a href="#experience" class="btn-ghost">View Journey ↓</a>
     </div>
   </div>
-
   <div class="hero-right">
     <div style="position:relative">
       <div class="hero-badge-float hbf-pmp">
@@ -790,7 +798,35 @@ window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30)
 ham.addEventListener('click',()=>{mo=!mo;mob.style.display=mo?'flex':'none';const s=ham.querySelectorAll('span');s[0].style.transform=mo?'rotate(45deg) translate(5px,5px)':'';s[1].style.opacity=mo?'0':'1';s[2].style.transform=mo?'rotate(-45deg) translate(5px,-5px)':''});
 function cm(){mo=false;mob.style.display='none';ham.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity='1'})}
 const secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.n-links a');
-window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(scrollY>=s.offsetTop-100)c=s.id});nls.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c))},{passive:true});
+let clickLock = false;
+
+/* Set active link */
+function setActive(id){
+  nls.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+id));
+}
+
+/* Update on scroll — only when not locked by a click */
+function updateActiveNav(){
+  if(clickLock) return;
+  let current='';
+  secs.forEach(s=>{
+    const rect=s.getBoundingClientRect();
+    if(rect.top <= 80) current=s.id;
+  });
+  if(current) setActive(current);
+}
+window.addEventListener('scroll', updateActiveNav, {passive:true});
+
+/* On click — lock active state, unlock after scroll settles */
+nls.forEach(a=>{
+  a.addEventListener('click', function(){
+    const target = this.getAttribute('href').replace('#','');
+    setActive(target);
+    clickLock = true;
+    clearTimeout(window._navLockTimer);
+    window._navLockTimer = setTimeout(()=>{ clickLock=false; updateActiveNav(); }, 1000);
+  });
+});
 
 /* PARTICLES */
 const cv=document.getElementById('pcv'),cx=cv.getContext('2d');
